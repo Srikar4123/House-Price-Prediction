@@ -72,3 +72,13 @@ plt.scatter(x_test, pred, color='green', label='Predicted')
 plt.xlabel('Area (in sq.ft.)')
 plt.ylabel('Price') 
 plt.show()
+
+#Function for predicting the house price
+
+def predict_house_price(area, stories, bedrooms, bathrooms):
+ input_data = pd.DataFrame([[area, stories, bedrooms, bathrooms]], columns=['area', 'stories', 'bedrooms', 'bathrooms'])
+ predicted_price = model1.predict(input_data)
+ print(f'Predicted house price for area: {area}, stories: {stories}, bedrooms: {bedrooms}, bathrooms: {bathrooms} is: {predicted_price[0]}')
+
+# Example usage
+predict_house_price(30000, 2, 6, 5)
